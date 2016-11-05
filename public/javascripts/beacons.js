@@ -9,7 +9,7 @@ function beaconGenerator(){
     var newBeaconTime = 30000;
     var currentBeacon = "";
 
-    setInterval(function(){p(beacons[getBeacon(beaconNo,currentBeacon)])},1000);
+    setInterval(function(){p(beacons[getBeacon(beaconNo,currentBeacon)])},newBeaconTime);
 
     function getBeacon(listB,currentB) {
         if (currentB === "") {
@@ -34,5 +34,3 @@ function beaconGenerator(){
         return arr;
     }
 }
-
-beaconGenerator();
