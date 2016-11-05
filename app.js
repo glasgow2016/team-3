@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var instagram = require("./instagramWatcher");
 GLOBAL.instagramDetails = [];
-var questiongenerator = require("./questiongame/questionGenerator");
+var questiongenerator = require("./questionGenerator");
 var index = require('./routes/index');
 var users = require('./routes/users');
 
@@ -73,6 +73,8 @@ function init() {
     console.log(question);
     console.log(answers);
   }
+
+  console.log("test")
 
   var questiongen = new questiongenerator(onQuestionFetched);
   questiongen.initDatabase();

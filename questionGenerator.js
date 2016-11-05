@@ -3,10 +3,9 @@
  */
 
 var sqlite = require("sqlite3").verbose();
-
+var path = require("path");
 
 //Fucking async programming why the fuck would anyone ever want to program like this
-
 function QuestionGenerator(callback){
     var currentQuestion = null;
     var currentAnswers = null;
@@ -14,7 +13,9 @@ function QuestionGenerator(callback){
     var db = null;
 
     var initDatabase = function(){
-        db = new sqlite.Database("database.db", sqlite.OPEN_READONLY, function(err){
+        var SQLiteForSomeReasonCreatesTheDatabaseInTheWrongLocationSoThisVariableIsHereToSolveThatPath = path.resolve(__dirname, './database.db');
+        
+        db = new sqlite.Database(SQLiteForSomeReasonCreatesTheDatabaseInTheWrongLocationSoThisVariableIsHereToSolveThatPath, sqlite.OPEN_READONLY, function(err){
             console.log("halp");
             if(err){
                 console.error(err.message);
