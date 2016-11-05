@@ -1,4 +1,4 @@
-extends layout
+//extends layout
 
 doctype html
 html(lang='en')
@@ -13,16 +13,18 @@ html(lang='en')
         title Helix Park
         // Bootstrap core CSS
         link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css', integrity='sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi', crossorigin='anonymous')
-        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js', integrity='sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK', crossorigin='anonymous')
+
+
         meta(name='viewport', content='width=device-width, initial-scale=1.0')
         link(href='assets/css/bootstrap-responsive.css', rel='stylesheet')
         // Custom styles for this template
         link(href='/stylesheets/cover.css', rel='stylesheet')
-        script(src='https://cdn.socket.io/socket.io-1.4.5.js')
-            script(src="https://code.jquery.com/jquery-3.1.1.js", integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=", crossorigin="anonymous")
-            script(src="/javascripts/mobile_client.js")
 
     body
+        //script(src="https://code.jquery.com/jquery-3.1.1.js", integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=", crossorigin="anonymous")
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js', integrity='sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK', crossorigin='anonymous')
+        script(src='https://cdn.socket.io/socket.io-1.4.5.js')
+        script(src="/javascripts/mobile_client.js")
         .site-wrapper
             .site-wrapper-inner
                 .cover-container
