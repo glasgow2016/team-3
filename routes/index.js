@@ -14,7 +14,7 @@ router.get("/rpitest", function(req, res, next) {
   res.render('rpi_touchscreen', { title: 'RPI Internal View Test'})
 });
 
-router.get("/instagramfeed", function(req,res,next) {
+router.get("/instagramFeed", function(req,res,next) {
     res.send(GLOBAL.instagramDetails)
 });
 
