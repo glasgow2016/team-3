@@ -14,7 +14,7 @@ function QuestionGenerator(callback){
     var db = null;
 
     var initDatabase = function(){
-        db = new sqlite.Database("../database.db", sqlite.OPEN_READONLY, function(err){
+        db = new sqlite.Database("database.db", sqlite.OPEN_READONLY, function(err){
             console.log("halp");
             if(err){
                 console.error(err.message);
