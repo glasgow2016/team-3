@@ -10,12 +10,15 @@ function onLoad() {
 }
 
 function setEventHandlers() {
+    console.log("Event handlers set");
     socket.on("connect", this.onSocketConnected)
 
 }
 
 function onSocketConnected() {
-    $("#nodeTest").val("Connected to SocketIO Server")
+    console.log("Socket connected");
+    $("#test").text("Connected to SocketIO");
+    console.log("Text set");
 }
 
 onLoad();
