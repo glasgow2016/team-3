@@ -3,7 +3,7 @@
  */
 
 var sqlite = require("sqlite3").verbose();
-var db;
+
 
 //Fucking async programming why the fuck would anyone ever want to program like this
 
@@ -11,6 +11,7 @@ function QuestionGenerator(callback){
     var currentQuestion = null;
     var currentAnswers = null;
     var onCallback = callback;
+    var db = null;
 
     var initDatabase = function(){
         db = new sqlite.Database("../database.db", sqlite.OPEN_READONLY, function(err){
@@ -24,7 +25,6 @@ function QuestionGenerator(callback){
     };
 
     var getQuestion = function(){
-
         var statement = db.prepare("SELECT `id`, `questionText`, `questionAnswer` FROM `questions` ORDER BY RANDOM() LIMIT 1");
         statement.get(handleQuestion);
     };
