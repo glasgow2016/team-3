@@ -9,6 +9,11 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+var server = require("http").Server(app);
+server.listen(8080);
+var util = require("util"),
+    io = require("socket.io")(server);
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -42,5 +47,18 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
+
+function init() {
+
+
+  io.on("connection", onSocketConnection);
+}
+
+function onSocketConnection(client) {
+  client.emit("newConnection")
+
+}
 
 module.exports = app;

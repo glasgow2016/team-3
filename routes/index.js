@@ -6,4 +6,15 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get("/mobile", function(req, res, next) {
+  res.render('index', { title: ''})
+});
+
+router.get("/rpitest", function(req, res, next) {
+  res.render('rpi_touchscreen', { title: 'RPI Internal View Test'})
+});
+
+
+
+
 module.exports = router;
