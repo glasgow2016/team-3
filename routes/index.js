@@ -15,6 +15,9 @@ router.get("/rpitest", function(req, res, next) {
 });
 
 
+router.get("/instagramfeed", function(req,res,next) {
+    res.send(GLOBAL.instagramDetails)
+});
 
 
 module.exports = router;

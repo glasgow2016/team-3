@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var instagram = require("./instagramWatcher");
-
+GLOBAL.instagramDetails = [];
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -58,17 +58,18 @@ function init() {
 
   function onInstagramFetched(data) {
     // instag
+    GLOBAL.instagramDetails = [];
     console.log((JSON.parse(data)["data"][0]));
     JSON.parse(data)["data"].forEach(function(item) {
-      console.log(item)
+      if (item["type"] == "image") {
+        GLOBAL.instagramDetails.push({"thumb": item["images"]["thumbnail"]["url"], "image": item["images"]["standard_resolution"]["url"], url: item["link"], "username": item["user"]["username"]})
+      }
     })
   }
 
 
   var inst = new instagram("beautiful", onInstagramFetched);
   inst.getPosts();
-
-
 
   io.on("connection", onSocketConnection);
 }
