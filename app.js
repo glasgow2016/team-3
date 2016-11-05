@@ -5,13 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var instagram = require("./instagramWatcher");
-<<<<<<< HEAD
 GLOBAL.instagramDetails = [];
-=======
 var questiongenerator = require("./questiongame/questionGenerator");
-
->>>>>>> 08a632c20c038dd45c6adf4377c9ee57298967d3
-
 var index = require('./routes/index');
 var users = require('./routes/users');
 
