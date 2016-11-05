@@ -61,7 +61,7 @@ function init() {
     // instag
     console.log((JSON.parse(data)["data"][0]));
     JSON.parse(data)["data"].forEach(function(item) {
-      console.log(item)
+      //console.log(item)
     })
   }
 
