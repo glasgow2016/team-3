@@ -76,7 +76,7 @@ function init() {
   }
 
   var questiongen = new questiongenerator(onQuestionFetched);
-  questiongen.initDatabase(questiongen.getQuestion);
+  questiongen.initDatabase();
 
   io.on("connection", onSocketConnection);
 }
