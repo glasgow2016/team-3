@@ -55,8 +55,13 @@ app.use(function(err, req, res, next) {
 
 function init() {
 
+
   function onInstagramFetched(data) {
-    console.log(data);
+    // instag
+    console.log((JSON.parse(data)["data"][0]));
+    JSON.parse(data)["data"].forEach(function(item) {
+      console.log(item)
+    })
   }
 
 
