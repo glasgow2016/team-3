@@ -11,7 +11,7 @@ function onLoad() {
 
 function setEventHandlers() {
     console.log("Event handlers set");
-    socket.on("connect", this.onSocketConnected)
+    socket.on("connect", this.onSocketConnected);
 }
 
 function onSocketConnected() {

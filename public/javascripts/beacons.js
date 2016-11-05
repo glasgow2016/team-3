@@ -6,7 +6,7 @@ function beaconGenerator(){
 
     var beacons = ["Falkirk Community Stadium","The Helix","The Kelpies Hub","The Wetland and River Carron","Abbotshaugh Woods","Dawson Mural","Carron Works","Forth & Clyde Canal","Rosebank Distillery","The Falkirk Wheel","Roughcastle Tunnel","Union Canal","Falkirk High Railway Station","Falkirk Tunnel","Callendar Park","Callendar House","Westquarter Glen","Primrose Road Underpass"]
     var beaconNo = range(0,beacons.length);
-    var newBeaconTime = 30000
+    var newBeaconTime = 30000;
     var currentBeacon = "";
 
     setInterval(function(){p(beacons[getBeacon(beaconNo,currentBeacon)])},1000);

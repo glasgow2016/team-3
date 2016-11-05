@@ -3,7 +3,7 @@
  */
 
 var sqlite = require("sqlite3").verbose();
-var db = new sqlite.Database("../database.db");
+
 
 //Fucking async programming why the fuck would anyone ever want to program like this
 
@@ -12,6 +12,10 @@ function QuestionGenerator(callback){
     this.currentQuestionAnswer = null;
     this.onCallback = callback;
 }
+
+QuestionGenerator.prototype.initDatabase = function(callback){
+    var db = new sqlite.Database("../database.db", null, callback);
+};
 
 QuestionGenerator.prototype.getQuestion = function(){
 
