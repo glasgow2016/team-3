@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var instagram = require("./instagramWatcher");
+var questiongenerator = require("./questiongame/questionGenerator");
 
 
 var index = require('./routes/index');
@@ -59,11 +60,16 @@ function init() {
     console.log(data);
   }
 
-
   var inst = new instagram("beautiful", onInstagramFetched);
   inst.getPosts();
 
+  function onQuestionFetched(question, answers){
+    console.log(question);
+    console.log(answers);
+  }
 
+  var questiongen = new questiongenerator(onQuestionFetched);
+  questiongen.getQuestion();
 
   io.on("connection", onSocketConnection);
 }
