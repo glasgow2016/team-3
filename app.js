@@ -59,7 +59,6 @@ function init() {
   function onInstagramFetched(data) {
     // instag
     GLOBAL.instagramDetails = [];
-    console.log((JSON.parse(data)["data"][0]));
     JSON.parse(data)["data"].forEach(function(item) {
       if (item["type"] == "image") {
         GLOBAL.instagramDetails.push({"thumb": item["images"]["thumbnail"]["url"], "image": item["images"]["standard_resolution"]["url"], url: item["link"], "username": item["user"]["username"]})
@@ -70,8 +69,6 @@ function init() {
   var inst = new instagram("beautiful", onInstagramFetched);
   inst.getPosts();
 
-<<<<<<< HEAD
-=======
   function onQuestionFetched(question, answers){
     console.log(question);
     console.log(answers);
@@ -80,7 +77,6 @@ function init() {
   var questiongen = new questiongenerator(onQuestionFetched);
   questiongen.getQuestion();
 
->>>>>>> 08a632c20c038dd45c6adf4377c9ee57298967d3
   io.on("connection", onSocketConnection);
 }
 
