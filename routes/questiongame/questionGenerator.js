@@ -7,10 +7,12 @@ var db = new sqlite.Database("../database.db");
 
 function questionGenerator(){
 
+    //Fucking async programming why the fuck would anyone ever want to program like this
     var currentQuestionId = null;
+    var currentQuestionAnswer = null;
 
     this.getQuestion = function(){
-        var statement = db.prepare("SELECT `id`, `questionText` FROM `questions` ORDER BY RANDOM() LIMIT 1");
+        var statement = db.prepare("SELECT `id`, `questionText`, `questionAnswer` FROM `questions` ORDER BY RANDOM() LIMIT 1");
 
         statement.get(function(err, row){
             if(err){
@@ -36,6 +38,8 @@ function questionGenerator(){
 
     function handleQuestion(question){
         console.log(question);
+        currentQuestionId = question.id;
+        currentQuestionAnswer = question.questionAnswer;
         var questionBox = document.getElementbyId("question");
 
         if(questionBox){
@@ -54,7 +58,7 @@ function questionGenerator(){
     }
 
     function verifyQuestion(answerID){
-
+        return (answerID == currentQuestionId);
     }
 };
 

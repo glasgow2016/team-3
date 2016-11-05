@@ -14,7 +14,8 @@ router.get("/rpitest", function(req, res, next) {
   res.render('rpi_touchscreen', { title: 'RPI Internal View Test'})
 });
 
-
-
+router.get("/questionGame", function(req, res, next){
+  res.render('questionGame', { title: 'fuck'});
+});
 
 module.exports = router;
