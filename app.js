@@ -4,6 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var instagram = require("./instagramWatcher");
+
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -50,15 +52,29 @@ app.use(function(err, req, res, next) {
 
 
 
+
 function init() {
+
+  function onInstagramFetched(data) {
+    console.log(data);
+  }
+
+
+  var inst = new instagram("beautiful", onInstagramFetched);
+  inst.getPosts();
+
 
 
   io.on("connection", onSocketConnection);
 }
 
 function onSocketConnection(client) {
+  console.log("Socket connection");
   client.emit("newConnection")
 
 }
 
+
+
+init();
 module.exports = app;
