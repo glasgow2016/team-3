@@ -4,19 +4,15 @@
 
 function beaconGenerator(){
 
-    //Create test beacons array
-    var beacons = [];
-    for (var i = 0; i <= 10; i++) {
-        beacons.push(i);
-    }
+    var beacons = ["Falkirk Community Stadium","The Helix","The Kelpies Hub","The Wetland and River Carron","Abbotshaugh Woods","Dawson Mural","Carron Works","Forth & Clyde Canal","Rosebank Distillery","The Falkirk Wheel","Roughcastle Tunnel","Union Canal","Falkirk High Railway Station","Falkirk Tunnel","Callendar Park","Callendar House","Westquarter Glen","Primrose Road Underpass"]
+    var beaconNo = range(0,beacons.length);
+    var newBeaconTime = 30000
+    var currentBeacon = "";
 
-    //Init current beacons
-    var currentBeacon = 0;
-
-    currentBeacon = getBeacon(beacons,currentBeacon);
+    setInterval(function(){p(beacons[getBeacon(beaconNo,currentBeacon)])},1000);
 
     function getBeacon(listB,currentB) {
-        if (currentB === 0) {
+        if (currentB === "") {
             return listB[Math.floor(Math.random() * listB.length)];
         }
         var ranBea = listB[Math.floor(Math.random() * listB.length)];
@@ -25,4 +21,18 @@ function beaconGenerator(){
         }
         return ranBea;
     }
+
+    function p(b){
+        console.log(b);
+    }
+
+    function range(low,high){
+        var arr = [];
+        for (var i = low;i<high;i++){
+            arr.push(i);
+        }
+        return arr;
+    }
 }
+
+beaconGenerator();
