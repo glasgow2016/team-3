@@ -6,13 +6,15 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get("/mobile", function(req, res, next) {
-  res.render('index', { title: ''})
-});
 
 router.get("/rpitest", function(req, res, next) {
-  res.render('rpi_touchscreen', { title: 'RPI Internal View Test'})
+    res.render('rpi_touchscreen', { title: 'RPI Internal View Test'})
 });
+
+router.get("/mobile", function(req, res, next) {
+    res.render('mobile', { title: 'Mobile'})
+});
+
 
 router.get("/instagramFeed", function(req,res,next) {
     res.send(GLOBAL.instagramDetails)
