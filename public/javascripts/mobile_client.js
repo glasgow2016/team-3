@@ -13,6 +13,7 @@ function onLoad() {
 function setEventHandlers() {
     console.log("Event handlers set");
     socket.on("connect", this.onSocketConnected);
+    socket.on("newBeacon", this.onNewBeacon);
 }
 
 function onSocketConnected() {
@@ -21,7 +22,9 @@ function onSocketConnected() {
     console.log("Text set");
 }
 
-
+function onNewBeacon(beacon) {
+    alert("New beacon: " + beacon);
+}
 
 function geoLocation() {
     navigator.geolocation.getCurrentPosition(
