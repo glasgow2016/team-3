@@ -38,7 +38,7 @@ function onNewQuestion(data){
 
         for(var answer in data.answers){
             console.log(data.answers[answer]);
-            answerContainer.innerHTML += "<li><input type=\"submit\" id=" + data.answers[answer].id + " value="+data.answers[answer].answerText+"/></li>";
+            answerContainer.innerHTML += "<li><input type=\"submit\" id=" + data.answers[answer].id + " value=\""+data.answers[answer].answerText+"\"></li>";
         }
     }
 }
