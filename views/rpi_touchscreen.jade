@@ -430,7 +430,7 @@ block content
                                     h4#myModalLabelQR.modal-title Interact with The Helix!
 
                                 .modal-body
-                                    iframe(src=' https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=CODE4GOOD', height='250', width='250')
+                                    iframe(src=' https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=place#{tag}', height='250', width='250')
 
                                 .modal-footer
                                     button.btn.btn-default(type='button', data-dismiss='modal') Close
