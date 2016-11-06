@@ -5,6 +5,7 @@
 console.log("Fired event");
 $('#reader').html5_qrcode(function(data){
         console.log(data);
+        alert(data);
         // do something when code is read
     },
     function(error){
