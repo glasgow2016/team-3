@@ -8,34 +8,34 @@ block content
                     .inner
                         h3.masthead-brand
                             img(src='images/logo.png')
-                        |
+
                         nav.nav.nav-masthead
                             a.nav-link Current Location:
-                            |
+
                             a.nav-link.active(href='#') The Kelpies
-                |
-                |
+
+
                 .inner.cover
                     h1.cover-heading Hi there!
-                    |
+
                     p.lead Welcome to the Kelpies.
-                    |
+
                     p.info
                         | Opened to the public in April 2014 and standing 30 metres high, The Kelpies rear up dramatically from the ground. These steel equine statues are the largest in the world and stand guard over the new extension to the Forth &amp; Clyde canal. Here you will also find The Helix Visitor Centre that boasts a fascinating exhibition space, gift shop and cafe full of home baked treats.
-                    |
+
                     p.lead
                         a.btn.btn-lg.btn-default(href='#')
                             | Learn more
                             i.ion-chevron-right
-            |
-            |
+
+
             .container-fluid
                 .row
                     .col-lrg-12
                         // <iframe src="http://mapbuildr.com/frame/mf233i" frameborder="0" height="500px" width="100%"></iframe>
                         script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAeUUzAQMHXDYz13i6esxphLRq6LQ_BdCQ&sensor=false&extension=.js')
-                        |
-                        |
+
+
                         script.
                             google.maps.event.addDomListener(window, 'load', init);
                             var map;
@@ -384,24 +384,24 @@ block content
                                 color: #4272db;
                             }
                         #TheHelix
-                |
-                |
-                |
+
+
+
                 .row.mapbutton
                     .col-md-3.mapping
                         // Button trigger modal
                         button.btn.btn-primary.btn-lg(type='button', data-toggle='modal', data-target='#myModal')
                             | QR Code
                         // <button type="button" class="btn btn-default btn-lg btn-block" action="#inline_content">QR Test</button>
-                    |
+
                     .col-md-3.mapping
                         button.btn.btn-primary.btn-lg(type='button', data-toggle='modal', data-target='#myModal')
                             | QR Code
-                    |
+
                     .col-md-3.mapping
                         button.btn.btn-primary.btn-lg(type='button', data-toggle='modal', data-target='#myModal')
                             | QR Code
-                    |
+
                     .col-md-3.mapping
                         button.btn.btn-primary.btn-lg(type='button', data-toggle='modal', data-target='#myModal')
                             | QR Code
@@ -412,12 +412,12 @@ block content
                     .modal-header
                         button.close(type='button', data-dismiss='modal', aria-label='Close')
                             span(aria-hidden='true') &times;
-                        |
+
                         h4#myModalLabel.modal-title Modal title
-                    |
+
                     .modal-body
                         iframe(src=' https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=CODE4GOOD', height='500', width='500')
-                    |
+                    
                     .modal-footer
                         button.btn.btn-default(type='button', data-dismiss='modal') Close
         //
