@@ -33,17 +33,6 @@ function onNewBeacon(beacon) {
     console.log(num);
     markers[num].setIcon("https://mapbuildr.com/assets/img/markers/solid-pin-green.png");
 }
-//
-// function geoLocation() {
-//     navigator.geolocation.getCurrentPosition(
-//         function(position) {
-//             alert('Latitude: ' + position.coords.latitude + ', Longitude: ' + position.coords.longitude + ', Altitude: ' + position.coords.altitude);
-//         },
-//         function () {
-//             alert('Error locating your device');
-//         },
-//         {enableHighAccuracy: true}
-//     );
-// }
+
 
 onLoad();
