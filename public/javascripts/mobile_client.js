@@ -5,7 +5,7 @@ var socket;
 
 function onLoad() {
     console.log("On load");
-    socket = io.connect("http://localhost:8080", {port: 8080, transports: ["websocket"]});
+    socket = io.connect(SERVER, {transports: ["websocket"]});
     this.setEventHandlers();
     this.geoLocation();
 }

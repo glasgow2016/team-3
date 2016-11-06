@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var instagram = require("./instagramWatcher");
 GLOBAL.instagramDetails = [];
+GLOBAL.SERVER = "http://localhost:8080";
 var questiongenerator = require("./questionGenerator");
 var index = require('./routes/index');
 var users = require('./routes/users');

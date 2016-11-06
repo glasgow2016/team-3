@@ -22,4 +22,9 @@ router.get("/questionGame", function(req, res, next){
   res.render('questionGame', { title: 'fuck'});
 });
 
+router.get("/bluemen", function(req, res, next){
+    res.render('blueMen', { title: 'Blue Men of the Minch'});
+});
+
+
 module.exports = router;
