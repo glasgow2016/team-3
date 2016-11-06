@@ -143,18 +143,16 @@ function updateWebpage(location) {
     var nLocation;
     var minimum = 10000;
 
-
-
-
     locationDetails.forEach(function(locat) {
-        var dist = getDistance(location["lat"], location["lon"], locat["lat"], locat["lon"]);
-        if (dist > minimum) {
+        var dist = getDistance(location["lat"], location["long"], locat["lat"], locat["long"]);
+        if (dist < minimum) {
             minimum = dist;
             nLocation = locat;
         }
     });
 
-    
+    $('#location').text(nLocation["title"]);
+
 }
 
 geoLocation();
