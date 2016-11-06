@@ -9,10 +9,399 @@ block content
                         h3.masthead-brand
                             img(src='images/logo.png')
                         nav.nav.nav-masthead
-                            a.nav-link.active(href='#')
-                            a.nav-link(href='#')
-                            a.nav-link(href='#')
+                            a.nav-link Current Location:
+                            a.nav-link.active(href='#') The Kelpies
+                .inner.cover
+                    h1.cover-heading Hi there!
+                    p.lead Welcome to the Kelpies.
+                    p.info
+                        | Opened to the public in April 2014 and standing 30 metres high, The Kelpies rear up dramatically from the ground. These steel equine statues are the largest in the world and stand guard over the new extension to the Forth & Clyde canal. Here you will also find The Helix Visitor Centre that boasts a fascinating exhibition space, gift shop and cafe full of home baked treats.
+                    p.lead
+                        a.btn.btn-lg.btn-default(href='#')
+                            | Learn more
+                            i.ion-chevron-right
             .container-fluid
                 .row
-                    .span12
-                        iframe(src='http://mapbuildr.com/frame/mf233i', frameborder='0', height='500px', width='100%')
+                    .col-lrg-12
+                        // <iframe src="http://mapbuildr.com/frame/mf233i" frameborder="0" height="500px" width="100%"></iframe>
+                        script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAeUUzAQMHXDYz13i6esxphLRq6LQ_BdCQ&sensor=false&extension=.js')
+                        script.
+                            google.maps.event.addDomListener(window, 'load', init);
+                            var map;
+                            function init() {
+                                var mapOptions = {
+                                    center: new google.maps.LatLng(56.009231, -3.770895),
+                                    zoom: 13,
+                                    zoomControl: false,
+                                    disableDoubleClickZoom: true,
+                                    mapTypeControl: false,
+                                    scaleControl: false,
+                                    scrollwheel: true,
+                                    panControl: true,
+                                    streetViewControl: false,
+                                    draggable: true,
+                                    overviewMapControl: false,
+                                    overviewMapControlOptions: {
+                                        opened: false,
+                                    },
+                                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                                    styles: [
+                                        {
+                                            "featureType": "water",
+                                            "stylers": [
+                                                {
+                                                    "color": "#19a0d8"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "featureType": "administrative",
+                                            "elementType": "labels.text.stroke",
+                                            "stylers": [
+                                                {
+                                                    "color": "#ffffff"
+                                                },
+                                                {
+                                                    "weight": 6
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "featureType": "administrative",
+                                            "elementType": "labels.text.fill",
+                                            "stylers": [
+                                                {
+                                                    "color": "#e85113"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "featureType": "road.highway",
+                                            "elementType": "geometry.stroke",
+                                            "stylers": [
+                                                {
+                                                    "color": "#efe9e4"
+                                                },
+                                                {
+                                                    "lightness": -40
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "featureType": "road.arterial",
+                                            "elementType": "geometry.stroke",
+                                            "stylers": [
+                                                {
+                                                    "color": "#efe9e4"
+                                                },
+                                                {
+                                                    "lightness": -20
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "featureType": "road",
+                                            "elementType": "labels.text.stroke",
+                                            "stylers": [
+                                                {
+                                                    "lightness": 100
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "featureType": "road",
+                                            "elementType": "labels.text.fill",
+                                            "stylers": [
+                                                {
+                                                    "lightness": -100
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "featureType": "road.highway",
+                                            "elementType": "labels.icon"
+                                        },
+                                        {
+                                            "featureType": "landscape",
+                                            "elementType": "labels",
+                                            "stylers": [
+                                                {
+                                                    "visibility": "off"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "featureType": "landscape",
+                                            "stylers": [
+                                                {
+                                                    "lightness": 20
+                                                },
+                                                {
+                                                    "color": "#efe9e4"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "featureType": "landscape.man_made",
+                                            "stylers": [
+                                                {
+                                                    "visibility": "off"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "featureType": "water",
+                                            "elementType": "labels.text.stroke",
+                                            "stylers": [
+                                                {
+                                                    "lightness": 100
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "featureType": "water",
+                                            "elementType": "labels.text.fill",
+                                            "stylers": [
+                                                {
+                                                    "lightness": -100
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "featureType": "poi",
+                                            "elementType": "labels.text.fill",
+                                            "stylers": [
+                                                {
+                                                    "hue": "#11ff00"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "featureType": "poi",
+                                            "elementType": "labels.text.stroke",
+                                            "stylers": [
+                                                {
+                                                    "lightness": 100
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "featureType": "poi",
+                                            "elementType": "labels.icon",
+                                            "stylers": [
+                                                {
+                                                    "hue": "#4cff00"
+                                                },
+                                                {
+                                                    "saturation": 58
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "featureType": "poi",
+                                            "elementType": "geometry",
+                                            "stylers": [
+                                                {
+                                                    "visibility": "on"
+                                                },
+                                                {
+                                                    "color": "#f0e4d3"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "featureType": "road.highway",
+                                            "elementType": "geometry.fill",
+                                            "stylers": [
+                                                {
+                                                    "color": "#efe9e4"
+                                                },
+                                                {
+                                                    "lightness": -25
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "featureType": "road.arterial",
+                                            "elementType": "geometry.fill",
+                                            "stylers": [
+                                                {
+                                                    "color": "#efe9e4"
+                                                },
+                                                {
+                                                    "lightness": -10
+                                                }
+                                            ]
+                                        },
+                                        // ----- Hides labels for Points of Interests -----
+                                        {
+                                            "featureType": "poi",
+                                            "elementType": "labels",
+                                            "stylers": [
+                                                {
+                                                    // hides both icon and text
+                                                    //"visibility": "off"
+                                                    // hides just the text
+                                                    "visibility": "simplified"
+                                                }
+                                            ]
+                                        },
+                                        // ------------------------------------------------
+                                    ],
+                                }
+                                var mapElement = document.getElementById('TheHelix');
+                                var map = new google.maps.Map(mapElement, mapOptions);
+                                var locations = [
+                                    ['Falkirk Community Stadium', '<a href=\\"#\">Learn More...</a>', 'undefined', 'undefined', 'undefined', 56.00569136197395, -3.7531516089843535, 'https://mapbuildr.com/assets/img/markers/solid-pin-black.png'], ['The Helix', '<a href=\"#\">Learn More...</a>', 'undefined', 'undefined', 'undefined', 56.01192940799509, -3.7598464026855254, 'https://mapbuildr.com/assets/img/markers/solid-pin-black.png'], ['The Kelpies Hub', '<a href=\"#\">Learn More...</a>', 'undefined', 'undefined', 'undefined', 56.019106727935466, -3.755308435937536, 'https://mapbuildr.com/assets/img/markers/solid-pin-black.png'], ['The Wetland and River Carron', '<a href=\"#\">Learn More...</a>', 'undefined', 'undefined', 'undefined', 56.0220704, -3.7674155, 'https://mapbuildr.com/assets/img/markers/solid-pin-black.png'], ['Abbotshaugh Woods', '<a href=\"#\">Learn More...</a>', 'undefined', 'undefined', 'undefined', 56.02581396244891, -3.7726844205321868, 'https://mapbuildr.com/assets/img/markers/solid-pin-black.png'], ['Dawson Mural', '<a href=\"#\">Learn More...</a>', 'undefined', 'undefined', 'undefined', 56.02125206476183, -3.7807504867553234, 'https://mapbuildr.com/assets/img/markers/solid-pin-black.png'], ['Carron Works', '<a href=\"#\">Learn More...</a>', 'undefined', 'undefined', 'undefined', 56.01901944469636, -3.8006966535645006, 'https://mapbuildr.com/assets/img/markers/solid-pin-black.png'], ['Forth & Clyde Canal', '<a href=\"#\">Learn More...</a>', 'undefined', 'undefined', 'undefined', 56.005838, -3.795557, 'https://mapbuildr.com/assets/img/markers/solid-pin-black.png'], ['Rosebank Distillery', '<a href=\"#\">Learn More...</a>', 'undefined', 'undefined', 'undefined', 56.002298, -3.805644, 'https://mapbuildr.com/assets/img/markers/solid-pin-black.png'], ['The Falkirk Wheel', '<a href=\"#\">Learn More...</a>', 'undefined', 'undefined', 'undefined', 56.00024155231926, -3.841645576318342, 'https://mapbuildr.com/assets/img/markers/solid-pin-black.png'], ['Roughcastle Tunnel', '<a href=\"#\">Learn More...</a>', 'undefined', 'undefined', 'undefined', 55.99935211727607, -3.8422471951538455, 'https://mapbuildr.com/assets/img/markers/solid-pin-black.png'], ['Union Canal', '<a href=\"#\">Learn More...</a>', 'undefined', 'undefined', 'undefined', 55.99582419760186, -3.84138888826908, 'https://mapbuildr.com/assets/img/markers/solid-pin-black.png'], ['Falkirk High Railway Station', '<a href=\"#\">Learn More...</a>', 'undefined', 'undefined', 'undefined', 55.991095800284505, -3.7961561154419314, 'https://mapbuildr.com/assets/img/markers/solid-pin-black.png'], ['Falkirk Tunnel', '<a href=\"#\">Learn More...</a>', 'undefined', 'undefined', 'undefined', 55.99066373514341, -3.7946540783935916, 'https://mapbuildr.com/assets/img/markers/solid-pin-black.png'], ['Callendar Park', '<a href=\"#\">Learn More...</a>', 'undefined', 'undefined', 'undefined', 55.992264005548776, -3.7735324872802494, 'https://mapbuildr.com/assets/img/markers/solid-pin-black.png'], ['Callendar House', '<a href=\"#\">Learn More...</a>', 'undefined', 'undefined', 'undefined', 55.99341612083509, -3.7662368787597416, 'https://mapbuildr.com/assets/img/markers/solid-pin-black.png'], ['Westquarter Glen', '<a href=\"#\">Learn More...</a>', 'undefined', 'undefined', 'undefined', 55.992148001417604, -3.7464013227538544, 'https://mapbuildr.com/assets/img/markers/solid-pin-black.png'], ['Primrose Road Underpass', '<a href=\"#\">Learn More...</a>', 'undefined', 'undefined', 'undefined', 56.00554398769251, -3.7386443558197016, 'https://mapbuildr.com/assets/img/markers/solid-pin-black.png']
+                                ];
+                                for (i = 0; i < locations.length; i++) {
+                                    if (locations[i][1] == 'undefined') {
+                                        description = '';
+                                    } else {
+                                        description = locations[i][1];
+                                    }
+                                    if (locations[i][2] == 'undefined') {
+                                        telephone = '';
+                                    } else {
+                                        telephone = locations[i][2];
+                                    }
+                                    if (locations[i][3] == 'undefined') {
+                                        email = '';
+                                    } else {
+                                        email = locations[i][3];
+                                    }
+                                    if (locations[i][4] == 'undefined') {
+                                        web = '';
+                                    } else {
+                                        web = locations[i][4];
+                                    }
+                                    if (locations[i][7] == 'undefined') {
+                                        markericon = '';
+                                    } else {
+                                        markericon = locations[i][7];
+                                    }
+                                    marker = new google.maps.Marker({
+                                        icon: markericon,
+                                        position: new google.maps.LatLng(locations[i][5], locations[i][6]),
+                                        map: map,
+                                        title: locations[i][0],
+                                        desc: description,
+                                        tel: telephone,
+                                        email: email,
+                                        web: web
+                                    });
+                                    link = '';
+                                    bindInfoWindow(marker, map, locations[i][0], description, telephone, email, web, link);
+                                }
+                                function bindInfoWindow(marker, map, title, desc, telephone, email, web, link) {
+                                    var infoWindowVisible = (function () {
+                                        var currentlyVisible = false;
+                                        return function (visible) {
+                                            if (visible !== undefined) {
+                                                currentlyVisible = visible;
+                                            }
+                                            return currentlyVisible;
+                                        };
+                                    }());
+                                    iw = new google.maps.InfoWindow();
+                                    google.maps.event.addListener(marker, 'click', function () {
+                                        if (infoWindowVisible()) {
+                                            iw.close();
+                                            infoWindowVisible(false);
+                                        } else {
+                                            var html = "<div style='color:#000;background-color:#fff;padding:5px;width:150px;'><h4>" + title + "</h4><p>" + desc + "<p></div>";
+                                            iw = new google.maps.InfoWindow({content: html});
+                                            iw.open(map, marker);
+                                            infoWindowVisible(true);
+                                        }
+                                    });
+                                    google.maps.event.addListener(iw, 'closeclick', function () {
+                                        infoWindowVisible(false);
+                                    });
+                                }
+
+                                var triangleCoords = [
+                                    {lat: 56.00569136197395, lng: -3.7531516089843535},
+                                    {lat: 56.01192940799509, lng: -3.7598464026855254},
+                                    {lat: 56.019106727935466, lng: -3.755308435937536},
+                                    {lat: 56.0220704, lng: -3.7674155},
+                                    {lat: 56.02581396244891, lng: -3.7726844205321868},
+                                    {lat: 56.02125206476183, lng: -3.7807504867553234},
+                                    {lat: 56.01901944469636, lng: -3.8006966535645006},
+                                    {lat: 56.005838, lng: -3.795557},
+                                    {lat: 56.002298, lng: -3.805644},
+                                    {lat: 56.00024155231926, lng: -3.841645576318342},
+                                    {lat: 55.99935211727607, lng: -3.8422471951538455},
+                                    {lat: 55.99582419760186, lng: -3.84138888826908},
+                                    {lat: 55.991095800284505, lng: -3.7961561154419314},
+                                    {lat: 55.99066373514341, lng: -3.7946540783935916},
+                                    {lat: 55.992264005548776, lng: -3.7735324872802494},
+                                    {lat: 55.99341612083509, lng: -3.7662368787597416},
+                                    {lat: 55.992148001417604, lng: -3.7464013227538544},
+                                    {lat: 56.00554398769251, lng: -3.7386443558197016}
+                                ];
+                                var bermudaTriangle = new google.maps.Polygon({
+                                    paths: triangleCoords,
+                                    strokeColor: '#000',
+                                    strokeOpacity: 0.8,
+                                    strokeWeight: 1,
+                                    fillColor: '#33cc33',
+                                    fillOpacity: 0.20,
+                                    borderWidth: 3,
+                                    borderColor: '#fff',
+                                    borderBottomColor: '#00ff00',
+                                    borderStyle: 'dashed solid'
+                                });
+                                bermudaTriangle.setMap(map);
+                            }
+                        style.
+                            #TheHelix {
+                                height: 450px;
+                            }
+
+                            .gm-style-iw * {
+                                display: block;
+                                width: 100%;
+                            }
+
+                            .gm-style-iw h4, .gm-style-iw p {
+                                margin: 0;
+                                padding: 0;
+                            }
+
+                            .gm-style-iw a {
+                                color: #4272db;
+                            }
+                        #TheHelix
+                .row.mapbutton
+                    .col-md-3.mapping
+                        // Button trigger modal
+                        button.btn.btn-primary.btn-lg(type='button', data-toggle='modal', data-target='#myModal')
+                            | QR Code
+                        // <button type="button" class="btn btn-default btn-lg btn-block" action="#inline_content">QR Test</button>
+                    .col-md-3.mapping
+                        button.btn.btn-primary.btn-lg(type='button', data-toggle='modal', data-target='#myModal')
+                            | QR Code
+                    .col-md-3.mapping
+                        button.btn.btn-primary.btn-lg(type='button', data-toggle='modal', data-target='#myModal')
+                            | QR Code
+                    .col-md-3.mapping
+                        button.btn.btn-primary.btn-lg(type='button', data-toggle='modal', data-target='#myModal')
+                            | QR Code
+        // Modal
+        #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+            .modal-dialog(role='document')
+                .modal-content
+                    .modal-header
+                        button.close(type='button', data-dismiss='modal', aria-label='Close')
+                            span(aria-hidden='true') ×
+                        h4#myModalLabel.modal-title Modal title
+                    .modal-body
+                        iframe(src=' https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=CODE4GOOD', height='500', width='500')
+                    .modal-footer
+                        button.btn.btn-default(type='button', data-dismiss='modal') Close
+        //
+          Bootstrap core JavaScript
+          ==================================================
+        // Placed at the end of the document so the pages load faster
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js', integrity='sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB', crossorigin='anonymous')
