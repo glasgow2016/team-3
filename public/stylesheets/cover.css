@@ -221,3 +221,11 @@ iframe, object, embed, #reader {
   color: #333;
   text-shadow: none; /* Prevent inheritance from `body` */
 }
+
+iframe{
+  overflow: hidden;
+  margin: 0 auto;
+  display:block;
+  text-align:center;
+  border:#000;
+}
