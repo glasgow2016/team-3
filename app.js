@@ -90,16 +90,19 @@ function setEventHandlers(){
 function onSocketConnection(client) {
   console.log("Socket connection server");
   client.emit("newConnection");
+    getNewQuestion(client);
 }
 
 function getNewQuestion(client){
-  var questiongen = new questiongenerator(onQuestionFetched);
-  questiongen.initDatabase();
 
-    console.log("getting a new question or something")
-  function onQuestionFetched(question, answers){
-    client.emit("newQuestion", {question: question, answers: answers});
-  }
+    console.log("newquestion")
+    var questiongen = new questiongenerator(onQuestionFetched);
+      questiongen.initDatabase();
+
+        console.log("getting a new question or something");
+      function onQuestionFetched(question, answers){
+        client.emit("newQuestion", {question: question, answers: answers});
+      }
 }
 
 function beaconGenerator(){

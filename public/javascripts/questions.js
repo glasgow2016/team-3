@@ -19,7 +19,7 @@ function setEventHandlers() {
 
 function onSocketConnected() {
     console.log("Socket connected wew");
-    socket.emit("getNewQuestion");
+    socket.emit("getNewQuestion",{});
 }
 
 function onNewQuestion(data){
@@ -28,13 +28,17 @@ function onNewQuestion(data){
     var answerContainer = document.getElementById("answers");
 
     if(data.question){
+        console.log(data.question)
         correctAnswer = data.question.questionAnswer;
-        pageQuestion.innerHTML = data.question;
+        pageQuestion.innerHTML = data.question.questionText;
     }
 
     if(data.answers){
+        console.log(data.answers);
+
         for(var answer in data.answers){
-            answerContainer.innerHTML += "<li id=" + answer.id + ">"+answer.answerText+"</li>";
+            console.log(data.answers[answer]);
+            answerContainer.innerHTML += "<li><input type=\"submit\" id=" + data.answers[answer].id + " value="+data.answers[answer].answerText+"/></li>";
         }
     }
 }
