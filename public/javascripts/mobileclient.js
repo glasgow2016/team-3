@@ -93,11 +93,16 @@ var locationDetails = [{
     long: -3.7386443558197016
 }];
 
+var coins = 0;
+
 
 console.log("Fired event");
 $('#reader').html5_qrcode(function(data){
-        console.log(data);
-        alert(data);
+      console.log(data);
+    coins += 20;
+    $('#coins').text("Your coins: " + coins);
+
+
         // do something when code is read
     },
     function(error){
@@ -152,8 +157,11 @@ function updateWebpage(location) {
     });
 
     $('#location').text(nLocation["title"]);
+    $('#locationp').text("Welcome to " + nLocation["title"]);
+    $('#desc').text(nLocation["description"]);
 
 }
+
 
 geoLocation();
 setTimeout(function(){
