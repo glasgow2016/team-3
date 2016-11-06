@@ -16,7 +16,6 @@ function QuestionGenerator(callback){
         var SQLiteForSomeReasonCreatesTheDatabaseInTheWrongLocationSoThisVariableIsHereToSolveThatPath = path.resolve(__dirname, './database.db');
         
         db = new sqlite.Database(SQLiteForSomeReasonCreatesTheDatabaseInTheWrongLocationSoThisVariableIsHereToSolveThatPath, sqlite.OPEN_READONLY, function(err){
-            console.log("halp");
             if(err){
                 console.error(err.message);
             }else{
@@ -51,10 +50,6 @@ function QuestionGenerator(callback){
             currentAnswers = rows;
             onCallback(currentQuestion, rows);
         }
-    };
-
-    var verifyQuestion = function(answerID){
-        return (answerID == currentQuestion.questionAnswer);
     };
 
     return {

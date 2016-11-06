@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var instagram = require("./instagramWatcher");
 GLOBAL.instagramDetails = [];
+GLOBAL.SERVERADDRESS = "http://localhost:8080";
 var questiongenerator = require("./questionGenerator");
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -15,7 +16,6 @@ var server = require("http").Server(app);
 server.listen(8080);
 var util = require("util"),
     io = require("socket.io")(server);
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -50,10 +50,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-var socket;
-
 function init() {
-
 
   function onInstagramFetched(data) {
     // instag
@@ -69,24 +66,30 @@ function init() {
   var inst = new instagram("beautiful", onInstagramFetched);
   inst.getPosts();
 
-  function onQuestionFetched(question, answers){
-    console.log(question);
-    console.log(answers);
-  }
-
-  console.log("test")
-
-  var questiongen = new questiongenerator(onQuestionFetched);
-  questiongen.initDatabase();
-
-
-  io.on("connection", onSocketConnection);
+  console.log("initing")
+  setEventHandlers();
   beaconGenerator();
+}
+
+
+function setEventHandlers(){
+  console.log("Set handlers")
+  io.on("connection", onSocketConnection);
 }
 
 function onSocketConnection(client) {
   console.log("Socket connection");
   client.emit("newConnection");
+  client.on("getNewQuestion", getNewQuestion);
+}
+
+function getNewQuestion(client){
+  var questiongen = new questiongenerator(onQuestionFetched);
+  questiongen.initDatabase();
+
+  function onQuestionFetched(question, answers){
+    client.emit("newQuestion", {question: question, answers: answers});
+  }
 }
 
 function beaconGenerator(){
