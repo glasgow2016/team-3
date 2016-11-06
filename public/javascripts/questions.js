@@ -7,33 +7,33 @@ var correctAnswer = null;
 
 function onLoad() {
     console.log("On load");
-    socket = io.connect(SERVERADDRESS, {transports: ["websocket"]});
-    this.setEventHandlers();
-    this.geoLocation();
+    socket = io.connect("http://localhost:8080", {transports: ["websocket"]});
+    setEventHandlers();
 }
 
 function setEventHandlers() {
     console.log("Event handlers set");
     socket.on("connect", this.onSocketConnected);
+    socket.on("newQuestion", this.onNewQuestion);
 }
 
-function onSocketConnected(client) {
-    console.log("Socket connected");
-    client.on("newQuestion", this.onNewQuestion);
-    client.emit("getNewQuestion");
+function onSocketConnected() {
+    console.log("Socket connected wew");
+    socket.emit("getNewQuestion");
 }
 
 function onNewQuestion(data){
-    var pageQuestion = document.getElementByID("question");
-    var answerContainer = document.getElementByID("answers");
+    console.log("New question!");
+    var pageQuestion = document.getElementById("question");
+    var answerContainer = document.getElementById("answers");
 
     if(data.question){
-        correctAnswer = question.questionAnswer;
+        correctAnswer = data.question.questionAnswer;
         pageQuestion.innerHTML = data.question;
     }
 
     if(data.answers){
-        for(answer in answers){
+        for(var answer in data.answers){
             answerContainer.innerHTML += "<li id=" + answer.id + ">"+answer.answerText+"</li>";
         }
     }
@@ -42,3 +42,5 @@ function onNewQuestion(data){
 function postAnswer(answer){
     socket.emit('postQuestionAnswer', answer);
 }
+
+onLoad();

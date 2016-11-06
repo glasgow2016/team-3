@@ -8,8 +8,6 @@ function onLoad() {
     socket = io.connect("http://localhost:8080", {transports: ["websocket"]});
     // socket = io.connect("https://code4good.pw:443", {transports: ["websocket"]});
     this.setEventHandlers();
-
-
 }
 
 function setEventHandlers() {

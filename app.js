@@ -14,8 +14,10 @@ var users = require('./routes/users');
 var app = express();
 var server = require("http").Server(app);
 server.listen(8080);
-var util = require("util"),
-    io = require("socket.io")(server);
+var util = require("util");
+var io = require("socket.io")(server);
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -74,19 +76,20 @@ function init() {
 
 function setEventHandlers(){
   console.log("Set handlers")
-  io.on("connection", onSocketConnection);
+  io.on("connect", onSocketConnection);
+  io.on("getNewQuestion", getNewQuestion);
 }
 
 function onSocketConnection(client) {
-  console.log("Socket connection");
+  console.log("Socket connection server");
   client.emit("newConnection");
-  client.on("getNewQuestion", getNewQuestion);
 }
 
 function getNewQuestion(client){
   var questiongen = new questiongenerator(onQuestionFetched);
   questiongen.initDatabase();
 
+    console.log("getting a new question or something")
   function onQuestionFetched(question, answers){
     client.emit("newQuestion", {question: question, answers: answers});
   }
