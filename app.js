@@ -75,7 +75,7 @@ function init() {
     console.log(answers);
   }
 
-  console.log("test")
+  console.log("test");
 
   var questiongen = new questiongenerator(onQuestionFetched);
   questiongen.initDatabase();

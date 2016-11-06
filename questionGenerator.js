@@ -16,7 +16,6 @@ function QuestionGenerator(callback){
         var SQLiteForSomeReasonCreatesTheDatabaseInTheWrongLocationSoThisVariableIsHereToSolveThatPath = path.resolve(__dirname, './database.db');
         
         db = new sqlite.Database(SQLiteForSomeReasonCreatesTheDatabaseInTheWrongLocationSoThisVariableIsHereToSolveThatPath, sqlite.OPEN_READONLY, function(err){
-            console.log("halp");
             if(err){
                 console.error(err.message);
             }else{
