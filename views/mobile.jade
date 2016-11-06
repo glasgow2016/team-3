@@ -1,10 +1,46 @@
 extends template
 
 block content
-    #reader(style='width:300px;height:250px')
+        // #reader(style='width:300px;height:250px')
 
-    script(src="/javascripts/html5-qrcode.min.js")
-    script(src="/javascripts/jsqrcode-combined.min.js")
-    script(src="/javascripts/mobileclient.js")
+        .site-wrapper
+            .site-wrapper-inner
+                .cover-container
+                    .masthead.clearfix
+                        .inner
+                            h3.masthead-brand
+                                img(src='images/logo.png')
+
+                            nav.nav.nav-masthead
+                                a.nav-link Current Location:
+
+                                a.nav-link.active(href='#') The Kelpies
+
+
+                    .inner.cover
+                        h1.cover-heading Hi there!
+
+                        p.lead Welcome to the Kelpies.
+
+                        p.info(style="text-align: center;")
+                            | Scan the QR code displayed on the Helix Post with your smartphone's camera. You'll then be on your way to earning Kelpie Coins around Helix Park!
+
+
+                .container-fluid
+                    .row
+                        .col-lrg-12
+                            br
+                            // <iframe src="http://mapbuildr.com/frame/mf233i" frameborder="0" height="500px" width="100%"></iframe>
+                            //iframe(src="#reader")
+                            #reader(style='max-width:100%;height:300px;')
+                            script(src="/javascripts/html5-qrcode.min.js")
+                            script(src="/javascripts/jsqrcode-combined.min.js")
+                            script(src="/javascripts/mobileclient.js")
+
+            //
+              Bootstrap core JavaScript
+              ==================================================
+            // Placed at the end of the document so the pages load faster
+            script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js', integrity='sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB', crossorigin='anonymous')
 
 

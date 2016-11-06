@@ -400,24 +400,27 @@ block content
                     .col-md-3.mapping
                         // Button trigger modal
                         button.btn.btn-primary.btn-lg(type='button', data-toggle='button', data-target='/instagram')
-                            | Latest Instagram Posts
                             i.ion-social-instagram-outline
+                            |  Latest Instagram Posts
 
                     .col-md-3.mapping
                         button.btn.btn-primary.btn-lg(type='button', data-toggle='modal', data-target='#myModalQR')
-                            | QR Code
                             i.ion-qr-scanner
+                            |  QR Code
+
 
                     .col-md-3.mapping
-                        button.btn.btn-primary.btn-lg(type='button', data-toggle='modal', data-target='/bluemen')
-                            | Play Helix!
+                        a.btn.btn-primary.btn-lg(href="/bluemen", role="button")
                             i.ion-ios-game-controller-a-outline
+                            |  Play Helix!
+
 
 
                     .col-md-3.mapping
                         button.btn.btn-primary.btn-lg(type='button', data-toggle='modal', data-target='#myModalHelp')
-                            | Help
                             i.ion-ios-help-outline
+                            |  Help
+
 
                     #myModalQR.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabelQR')
                         .modal-dialog(role='document')
@@ -428,21 +431,22 @@ block content
 
                                     h4#myModalLabelQR.modal-title.mod Interact with The Helix!
 
-                                .modal-body
-                                    iframe(src=' https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=place#{tag}', height='250', width='250')
-                                    p.mod
+                                .modal-body.mod
+                                    p
                                     | Navigate to
-                                    b code4good.pw/mobile
-                                    | to scan this QR code below.
-                                    p.mod
+                                    a(href="https://code4good.pw/mobile")
+                                      b  code4good.pw/mobile
+                                    |  to scan this QR code below.
+                                    p
                                     | Here you'll be able to interact more with the Helix Park. You can earn Kelpie Coins to receive amazing deals around the park!
-                                    iframe(src=' https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=place#{tag}', height='250', width='250')
+                                    br
+                                    iframe(src=' https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=place#{tag}', height='160', width='160')
 
                                 .modal-footer
                                     button.btn.btn-default(type='button', data-dismiss='modal') Close
 
 
-                    #myModalHelp.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabelHelp')
+                    #myModalHelp.modal.fade(tabindex='-2', role='dialog', aria-labelledby='myModalLabelHelp')
                         .modal-dialog(role='document')
                             .modal-content
                                 .modal-header
@@ -453,7 +457,7 @@ block content
 
                                 .modal-body
                                     p.mod
-                                     | This is test text.
+                                     | This is test text. There will be information on how to use this post and you'll also be able to connect directly to a member of staff in the visitor centre!
 
                                 .modal-footer
                                     button.btn.btn-default(type='button', data-dismiss='modal') Close

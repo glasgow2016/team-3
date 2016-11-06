@@ -69,6 +69,10 @@ router.get("/rpitest", function(req, res, next) {
     res.render('rpi_touchscreen', { title: 'RPI Internal View Test', tag: req.query.tagId, "locationTitle": locationData[req.query.tagId]["title"], "locationDesc": locationData[req.query.tagId]["description"]})
 });
 
+router.get("/youwin", function(req, res, next){
+    res.render('youwin')
+});
+
 router.get("/mobile", function(req, res, next) {
     res.render('mobile', { title: 'Mobile'})
 });
