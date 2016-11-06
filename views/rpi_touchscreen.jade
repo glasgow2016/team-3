@@ -39,6 +39,7 @@ block content
 
                         script.
                             google.maps.event.addDomListener(window, 'load', init);
+                            var markers = [];
                             var map;
                             function init() {
                                 var mapOptions = {
@@ -302,9 +303,16 @@ block content
                                         email: email,
                                         web: web
                                     });
+                                    markers.push(marker);
+
                                     link = '';
                                     bindInfoWindow(marker, map, locations[i][0], description, telephone, email, web, link);
                                 }
+                                var num = window.location.href;
+                                num = num.substr(num.indexOf("tagId") + 6, num.length - num.indexOf("tagId") - 6);
+                                console.log(num);
+                                markers[num].setIcon("https://mapbuildr.com/assets/img/markers/solid-pin-green.png");
+                                
                                 function bindInfoWindow(marker, map, title, desc, telephone, email, web, link) {
                                     var infoWindowVisible = (function () {
                                         var currentlyVisible = false;

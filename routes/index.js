@@ -8,7 +8,8 @@ router.get('/', function(req, res, next) {
 
 
 router.get("/rpitest", function(req, res, next) {
-    res.render('rpi_touchscreen', { title: 'RPI Internal View Test'})
+    console.log(req.query.tagId);
+    res.render('rpi_touchscreen', { title: 'RPI Internal View Test' })
 });
 
 router.get("/mobile", function(req, res, next) {
