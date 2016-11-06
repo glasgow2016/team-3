@@ -6,8 +6,7 @@ var socket;
 function onLoad() {
     console.log("On load");
     socket = io.connect("http://localhost:8080", {transports: ["websocket"]});
-    // socket = io.connect("http://code4good.pw:80", {transports: ["websocket"]});
-
+    // socket = io.connect("https://code4good.pw:443", {transports: ["websocket"]});
     this.setEventHandlers();
 
 
