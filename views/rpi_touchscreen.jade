@@ -402,7 +402,6 @@ block content
                         button.btn.btn-primary.btn-lg(type='button', data-toggle='button', data-target='/instagram')
                             | Latest Instagram Posts
                             i.ion-social-instagram-outline
-                        // <button type="button" class="btn btn-default btn-lg btn-block" action="#inline_content">QR Test</button>
 
                     .col-md-3.mapping
                         button.btn.btn-primary.btn-lg(type='button', data-toggle='modal', data-target='#myModalQR')
@@ -427,26 +426,33 @@ block content
                                     button.close(type='button', data-dismiss='modal', aria-label='Close')
                                         span(aria-hidden='true') &times;
 
-                                    h4#myModalLabelQR.modal-title Interact with The Helix!
+                                    h4#myModalLabelQR.modal-title.mod Interact with The Helix!
 
                                 .modal-body
+                                    iframe(src=' https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=place#{tag}', height='250', width='250')
+                                    p.mod
+                                    | Navigate to
+                                    b code4good.pw/mobile
+                                    | to scan this QR code below.
+                                    p.mod
+                                    | Here you'll be able to interact more with the Helix Park. You can earn Kelpie Coins to receive amazing deals around the park!
                                     iframe(src=' https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=place#{tag}', height='250', width='250')
 
                                 .modal-footer
                                     button.btn.btn-default(type='button', data-dismiss='modal') Close
 
 
-                                    #myModalLabelHelp.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabelHelp')
+                    #myModalHelp.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabelHelp')
                         .modal-dialog(role='document')
                             .modal-content
                                 .modal-header
                                     button.close(type='button', data-dismiss='modal', aria-label='Close')
                                         span(aria-hidden='true') &times;
 
-                                    h4#myModalLabel.modal-title Help Desk
+                                    h4#myModalLabel.modal-title.mod Help Desk
 
                                 .modal-body
-                                    p
+                                    p.mod
                                      | This is test text.
 
                                 .modal-footer

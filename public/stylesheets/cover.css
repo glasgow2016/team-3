@@ -125,6 +125,9 @@ iframe, object, embed {
   font-weight: bold;
 }
 
+.mod {
+  color: black;
+}
 
 /*
  * Footer
