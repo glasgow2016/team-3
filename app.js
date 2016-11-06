@@ -65,8 +65,15 @@ function init() {
     })
   }
 
-  var inst = new instagram("beautiful", onInstagramFetched);
-  inst.getPosts();
+
+  setTimeout(function(){
+    var inst = new instagram("beautiful", onInstagramFetched);
+    inst.getPosts();
+  }, 30000);
+
+
+
+
 
   console.log("initing")
   setEventHandlers();
