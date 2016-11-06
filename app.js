@@ -99,10 +99,9 @@ function beaconGenerator(){
   var newBeaconTime = 30000;
   var currentBeacon = "";
 
-  io.sockets.emit("newBeacon", beacons[getBeacon(beaconNo,currentBeacon)]);
-
   setInterval(function(){
-      io.sockets.emit("newBeacon", beacons[getBeacon(beaconNo,currentBeacon)]);
+      currentBeacon = getBeacon(beaconNo,currentBeacon);
+      io.sockets.emit("newBeacon", beacons[currentBeacon]);
   }, newBeaconTime);
 
   function getBeacon(listB,currentB) {
