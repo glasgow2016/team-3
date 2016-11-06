@@ -5,7 +5,9 @@ var socket;
 
 function onLoad() {
     console.log("On load");
-    socket = io.connect(SERVER, {transports: ["websocket"]});
+    socket = io.connect("http://localhost:8080", {transports: ["websocket"]});
+    // socket = io.connect("http://code4good.pw:80", {transports: ["websocket"]});
+
     this.setEventHandlers();
     this.geoLocation();
 }
