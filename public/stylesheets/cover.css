@@ -216,3 +216,8 @@ iframe, object, embed, #reader {
     padding-bottom: 20px;
   }
 }
+
+#answers {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+}
