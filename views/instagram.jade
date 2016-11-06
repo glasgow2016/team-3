@@ -1,0 +1,81 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        // The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
+        meta(name='description', content='')
+        meta(name='author', content='')
+        link(rel='icon', href='../../favicon.ico')
+        title Helix Park
+        // Bootstrap core CSS
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+        //script.
+        //    window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\\/script>')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js', integrity='sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB', crossorigin='anonymous')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        // Custom styles for this template
+        link(href='/stylesheets/cover2.css', rel='stylesheet')
+        link(href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', rel='stylesheet')
+    body
+        script(src='https://cdn.socket.io/socket.io-1.4.5.js')
+
+
+block content
+    script(src="/javascripts/rpiclient.js")
+    .site-wrapper
+        .site-wrapper-inner
+            .cover-container
+                .masthead.clearfix
+                    .inner
+                        h3.masthead-brand
+                            img(src='images/logo.png')
+
+
+
+            .container-fluid
+                .row
+                    .col-lrg-4
+                        blockquote.instagram-media(data-instgrm-version="7", style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);")
+                            div(style="padding:8px;")
+                                div(style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;")
+                                    div(style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;")
+                                p(style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;")
+                                    a(href="https://www.instagram.com/p/BKwARcWBOmu/", style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;", target="_blank") A photo posted by Neil McDade (@spectacular.scotland)
+                                    |  on
+                                    time(style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;", datetime="2016-09-24T19:16:07+00:00") Sep 24, 2016 at 12:16pm PDT
+                        script(async="", defer="", src="//platform.instagram.com/en_US/embeds.js")
+
+                    .col-lrg-4
+                        blockquote.instagram-media(data-instgrm-version="7", style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);")
+                            div(style="padding:8px;")
+                                div(style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:62.5% 0; text-align:center; width:100%;")
+                                    div(style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;")
+                                p(style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;")
+                                    a(href="https://www.instagram.com/p/BJC82eJhzHX/", style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;", target="_blank") A photo posted by Alexandra Marshall (@alexandra__marshall)
+                                    |  on
+                                    time(style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;", datetime="2016-08-13T10:49:00+00:00") Aug 13, 2016 at 3:49am PDT
+                        script(async="", defer="", src="//platform.instagram.com/en_US/embeds.js")
+                    .col-lrg-4
+                        blockquote.instagram-media(data-instgrm-version="7", style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);")
+                            div(style="padding:8px;")
+                                div(style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:36.4814814815% 0; text-align:center; width:100%;")
+                                    div(style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;")
+                                p(style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;")
+                                    a(href="https://www.instagram.com/p/BL4Odm7B_6f/", style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;", target="_blank") A photo posted by tantri_ns (@tantri_ns)
+                                    |  on
+                                    time(style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;", datetime="2016-10-22T20:25:26+00:00") Oct 22, 2016 at 1:25pm PDT
+                        script(async="", defer="", src="//platform.instagram.com/en_US/embeds.js")
+
+
+
+
+
+        //
+          Bootstrap core JavaScript
+          ==================================================
+        // Placed at the end of the document so the pages load faster
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js', integrity='sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB', crossorigin='anonymous')

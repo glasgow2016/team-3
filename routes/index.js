@@ -79,7 +79,7 @@ router.get("/mobile", function(req, res, next) {
 
 
 router.get("/instagramFeed", function(req,res,next) {
-    res.send(GLOBAL.instagramDetails)
+    res.render('instagram', { title: 'Instagram Feed @Helix'})
 });
 
 router.get("/questionGame", function(req, res, next){
