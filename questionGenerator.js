@@ -52,10 +52,6 @@ function QuestionGenerator(callback){
         }
     };
 
-    var verifyQuestion = function(answerID){
-        return (answerID == currentQuestion.questionAnswer);
-    };
-
     return {
         initDatabase: initDatabase,
         getQuestion: getQuestion,
